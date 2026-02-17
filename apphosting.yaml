@@ -5,3 +5,73 @@ runConfig:
   maxInstances: 2
   concurrency: 40
   timeoutSeconds: 300
+
+env:
+  # Public (client-visible) values.
+  - variable: NEXT_PUBLIC_TREASURY_WALLET
+    value: "4st6sXyHiTPpgp42egiz1r6WEEBLMcKYL5cpncwnEReg"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_DEFAULT_TOKEN_MINT
+    value: "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_PHANTOM_APP_ID
+    value: ""
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_LIVESTREAM_URL
+    value: "https://player.kick.com/sessionmint"
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_HELIUS_RPC_URL
+    value: ""
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_HELIUS_URL
+    value: ""
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_HELIUS_API_KEY
+    value: ""
+    availability: [BUILD, RUNTIME]
+  - variable: NEXT_PUBLIC_AUTOBLOW_ENABLED
+    value: "false"
+    availability: [BUILD, RUNTIME]
+
+  # Server runtime config (non-secret).
+  - variable: FIREBASE_PROJECT_ID
+    value: "sessionkernel"
+    availability: [RUNTIME]
+  - variable: FIRESTORE_DATABASE_ID
+    value: "(default)"
+    availability: [RUNTIME]
+  - variable: GOOGLE_CLOUD_REGION
+    value: "us-east4"
+    availability: [RUNTIME]
+  - variable: STATE_TICK_QUEUE_ID
+    value: ""
+    availability: [RUNTIME]
+  - variable: AUTOBLOW_ENABLED
+    value: "false"
+    availability: [RUNTIME]
+  - variable: AUTOBLOW_API_URL
+    value: "https://latency.autoblowapi.com"
+    availability: [RUNTIME]
+  - variable: AUTOBLOW_TIMEOUT_MS
+    value: "10000"
+    availability: [RUNTIME]
+  - variable: RATE_LIMIT_WINDOW_MS
+    value: "60000"
+    availability: [RUNTIME]
+  - variable: RATE_LIMIT_MAX_REQUESTS
+    value: "100"
+    availability: [RUNTIME]
+
+  # Server secrets (create in Secret Manager / App Hosting secrets first).
+  - variable: HELIUS_API_KEY
+    secret: HELIUS_API_KEY
+    availability: [RUNTIME]
+  - variable: AUTOBLOW_DEVICE_TOKEN
+    secret: AUTOBLOW_DEVICE_TOKEN
+    availability: [RUNTIME]
+  - variable: CRON_SECRET
+    secret: CRON_SECRET
+    availability: [RUNTIME]
+  - variable: ADMIN_API_KEY
+    secret: ADMIN_API_KEY
+    availability: [RUNTIME]
