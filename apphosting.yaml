@@ -21,13 +21,7 @@ env:
     value: "https://player.kick.com/sessionmint"
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_HELIUS_RPC_URL
-    value: ""
-    availability: [BUILD, RUNTIME]
-  - variable: NEXT_PUBLIC_HELIUS_URL
-    value: ""
-    availability: [BUILD, RUNTIME]
-  - variable: NEXT_PUBLIC_HELIUS_API_KEY
-    value: ""
+    value: "https://api.mainnet-beta.solana.com"
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_AUTOBLOW_ENABLED
     value: "true"
