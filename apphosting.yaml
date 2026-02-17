@@ -1,4 +1,4 @@
-﻿runConfig:
+runConfig:
   cpu: 1
   memoryMiB: 512
   minInstances: 0
@@ -75,3 +75,4 @@ env:
   - variable: ADMIN_API_KEY
     secret: ADMIN_API_KEY
     availability: [RUNTIME]
+
