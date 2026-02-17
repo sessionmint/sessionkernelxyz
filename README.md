@@ -49,7 +49,7 @@ Important groups:
 
 For local ngrok testing, keep `.env.local` populated with:
 - `FIREBASE_PROJECT_ID`
-- `FIRESTORE_DATABASE_ID` (`(default)` or named DB like `sessionkernel`)
+- `FIRESTORE_DATABASE_ID` (`(default)` or named DB like `sessionkernelxyz`)
 - `GOOGLE_CLOUD_REGION`
 - `STATE_TICK_QUEUE_ID`
 - `CRON_SECRET`

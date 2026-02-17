@@ -29,10 +29,10 @@ env:
 
   # Server runtime config (non-secret).
   - variable: FIREBASE_PROJECT_ID
-    value: "sessionkernel"
+    value: "sessionkernelxyz"
     availability: [RUNTIME]
   - variable: FIRESTORE_DATABASE_ID
-    value: "sessionkernel"
+    value: "(default)"
     availability: [RUNTIME]
   - variable: GOOGLE_CLOUD_REGION
     value: "us-east4"
