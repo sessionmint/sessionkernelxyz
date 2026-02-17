@@ -1,4 +1,4 @@
-runConfig:
+﻿runConfig:
   cpu: 1
   memoryMiB: 512
   minInstances: 0
@@ -15,7 +15,7 @@ env:
     value: "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn"
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_PHANTOM_APP_ID
-    value: ""
+    value: "822f6b16-3097-4072-a303-747fea492862"
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_LIVESTREAM_URL
     value: "https://player.kick.com/sessionmint"
@@ -30,7 +30,7 @@ env:
     value: ""
     availability: [BUILD, RUNTIME]
   - variable: NEXT_PUBLIC_AUTOBLOW_ENABLED
-    value: "false"
+    value: "true"
     availability: [BUILD, RUNTIME]
 
   # Server runtime config (non-secret).
@@ -38,16 +38,16 @@ env:
     value: "sessionkernel"
     availability: [RUNTIME]
   - variable: FIRESTORE_DATABASE_ID
-    value: "(default)"
+    value: "sessionkernel"
     availability: [RUNTIME]
   - variable: GOOGLE_CLOUD_REGION
     value: "us-east4"
     availability: [RUNTIME]
   - variable: STATE_TICK_QUEUE_ID
-    value: ""
+    value: "state-tick-queue"
     availability: [RUNTIME]
   - variable: AUTOBLOW_ENABLED
-    value: "false"
+    value: "true"
     availability: [RUNTIME]
   - variable: AUTOBLOW_API_URL
     value: "https://latency.autoblowapi.com"
