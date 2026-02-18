@@ -9,7 +9,7 @@
 # A record should return 35.219.200.203
 nslookup exwhyzee.fun
 
-# TXT should include fah-claim token
+# TXT should include fah-claim token for xyzsessionkernel
 nslookup -type=TXT exwhyzee.fun
 
 # ACME CNAME should resolve
@@ -30,25 +30,18 @@ Invoke-WebRequest -Uri "https://exwhyzee.fun/api/state" -UseBasicParsing | Selec
 ## Step 3 — Update Cloud Scheduler to target exwhyzee.fun
 
 ```powershell
-# Read the clean CRON_SECRET (must be run in same shell session that had cron_clean.txt,
-# OR re-fetch from Secret Manager):
-gcloud secrets versions access latest --secret=CRON_SECRET --project=sessionkernelxyz --out-file="$env:TEMP\cron_clean.txt" 2>&1
-$bytes = [System.IO.File]::ReadAllBytes("$env:TEMP\cron_clean.txt")
-$cleanStr = [System.Text.Encoding]::ASCII.GetString($bytes[0..63])
-
-# Update scheduler URI to exwhyzee.fun
 gcloud scheduler jobs update http sessionkernel-tick-watchdog `
   --location=us-east4 `
   --project=sessionkernelxyz `
   --uri="https://exwhyzee.fun/api/state/tick"
 
-# Verify the job was updated
+# Verify
 gcloud scheduler jobs describe sessionkernel-tick-watchdog --location=us-east4 --project=sessionkernelxyz
 ```
 
 ---
 
-## Step 4 — Test the tick endpoint on the live domain
+## Step 4 — Test tick endpoint on live domain
 
 ```powershell
 $bytes = [System.IO.File]::ReadAllBytes("$env:TEMP\cron_clean.txt")
@@ -93,7 +86,7 @@ Invoke-WebRequest -Uri "https://exwhyzee.fun/api/state/tick" -Method POST `
 ## Step 6 — Final checklist
 
 - [ ] `https://exwhyzee.fun` loads the app in browser
-- [ ] `https://www.exwhyzee.fun` redirects to app
+- [ ] `https://www.exwhyzee.fun` redirects/loads app
 - [ ] SSL padlock shows (no certificate warnings)
 - [ ] `/api/state` returns JSON with `session` data
 - [ ] `/api/state/stream` SSE stream connects and holds open
