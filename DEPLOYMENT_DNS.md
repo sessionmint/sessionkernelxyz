@@ -115,7 +115,7 @@ Invoke-WebRequest -Uri "https://exwhyzee.fun/api/state" -UseBasicParsing | Selec
 | Cloud Run Service | ✅ RUNNING | `xyzsessionkernel-3u5q4h7zvq-uk.a.run.app` |
 | Firestore Database | ✅ ACTIVE | `(default)`, native mode |
 | Cloud Tasks Queue | ✅ RUNNING | `state-tick-queue` (us-east4) |
-| Cloud Scheduler Watchdog | ✅ ENABLED | every minute → `xyzsessionkernel` Cloud Run URL |
+| Cloud Scheduler Watchdog | ✅ ENABLED | every minute → `xyzsessionkernel--sessionkernelxyz.us-east4.hosted.app` |
 | Secret: HELIUS_API_KEY | ✅ SET | Secret Manager |
 | Secret: CRON_SECRET | ✅ SET | Secret Manager v2 (clean) |
 | Secret: AUTOBLOW_DEVICE_TOKEN | ✅ SET | Secret Manager |
